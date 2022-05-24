@@ -10,10 +10,8 @@ var requestUrl =
   "&type=restaurant&key=" +
   apiKeyTheo;
 
-// fetch(requestUrl, { mode: "no-cors" }).then(function (data) {
-//   for (var i = 0; i < 20; i++) {
-//     console.log(data[i]);
-//     console.log(data[i].name);
-//   }
-// });
-
+fetch(requestUrl, { mode: "no-cors" }).then(function (data) {
+  for (var i = 0; i < 20; i++) {
+    console.log(data[i]);
+  }
+});

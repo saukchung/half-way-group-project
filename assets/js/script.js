@@ -1,5 +1,3 @@
-var apiKeyTheo = "AIzaSyCfMIOuEOERlmSzDzHkHs23VNYCBeUTQ70";
-
 // DEPENDENCIES
 //  inputA
 //      autocomplete
@@ -64,6 +62,17 @@ var apiKeyTheo = "AIzaSyCfMIOuEOERlmSzDzHkHs23VNYCBeUTQ70";
 //   });
 // }
 // ===========================================================
+var apiKeyTheo = "AIzaSyCfMIOuEOERlmSzDzHkHs23VNYCBeUTQ70";
+var dummyLoc = "40.78143,-73.97378";
+var setRadius = "1500";
+
+var requestUrl =
+  "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
+  dummyLoc +
+  "&radius=" +
+  setRadius +
+  "&type=restaurant&key=" +
+  apiKeyTheo;
 
 //  Function to Generate cards for places and place them                    2 *
 
