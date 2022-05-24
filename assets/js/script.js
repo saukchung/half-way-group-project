@@ -1,4 +1,6 @@
-// DEPENDENCIES             
+var apiKeyTheo = "AIzaSyCfMIOuEOERlmSzDzHkHs23VNYCBeUTQ70";
+
+// DEPENDENCIES
 //  inputA
 //      autocomplete
 //  inputB
@@ -8,18 +10,17 @@
 //  .map  == render map here
 
 //  #results-container(append results cards to this)
-//  
+//
 
 //  #sortBy == grab the value of one of the options
-
 
 // STATE
 
 // FUNCTIONS
 
-//  Collect pointA and pointB and store                     1 *   
+//  Collect pointA and pointB and store                     1 *
 
-//  Use Google Maps to find a midway point                  1 
+//  Use Google Maps to find a midway point                  1
 //      Maps SDKs
 //          render map == staticcally
 //          get coordinates for a
@@ -27,7 +28,7 @@
 //              average out the x's and y's of two coordinates
 //          return betweenCoordinate                        1
 
-//  Use Google Places                                       2 
+//  Use Google Places                                       2
 //      Geocoding
 //          Create a circle around the betweenCoordinate and get the places
 
@@ -62,7 +63,7 @@
 //     }
 //   });
 // }
-// ===========================================================    
+// ===========================================================
 
 //  Function to Generate cards for places and place them                    2 *
 
@@ -73,9 +74,8 @@
 //  input a
 //  input b
 //  press submit
-//  individual cards have information: type, name, 
+//  individual cards have information: type, name,
 
 // INITIALIZATION
 
 //      render world map
-
