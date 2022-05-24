@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Half Way</title>
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <style>
@@ -26,11 +26,9 @@
       <button id="generate">Generate</button>
     </form>
 
-    <div>
+    <div id="map">
       <!-- GOOGLE MAP HAS TO COME UP HERE -->
-      <figure class="hero"></figure>
-      <img src=https://snazzy-maps-cdn.azureedge.net/assets/68605-neon.png?v=20170622032913 width="100%">
-      <!-- must be able to plot A and B -->
+
     </div>
 
     <main id="results-container">
@@ -39,7 +37,7 @@
         <h3>Results:</h3>
         <div>
           <h5>Sort by:</h5>
-          <select name="sortOption" id="">
+          <select name="sortBy" id="sortBy">
             <option value="">Ratings</option>
             <option value="">Costs</option>
             <option value="">Most equidistant</option>
@@ -54,7 +52,33 @@
     <footer>
       <p>made by the MVPs</p>
     </footer>
+    <!-- AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ -->
   </body>
   <!-- Linked the Javascript here -->
-  <link rel="script" href="./assets/js/script.js" />
+  <script src="./assets/js/script.js"></script>
+
+  <script src="./assets/js/locale.js"></script>
+
+  <script>
+    // Initialize and add the map
+    function initMap() {
+      // The location of Uluru
+      console.log("mapit");
+      const nyctribeca = { lat: 40.7163, lng: -74.0086 };
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 13,
+        center: nyctribeca,
+      });
+      // The marker, positioned at Uluru
+      const marker = new google.maps.Marker({
+        position: nyctribeca,
+        map: map,
+      });
+    }
+    window.initMap = initMap;
+  </script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ&callback=initMap&v=weekly"
+    defer
+  ></script>
 </html>
