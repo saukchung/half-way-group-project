@@ -1,9 +1,14 @@
+
 // DEPENDENCIES             
 //  inputA
+var inputA = document.getElementById("pointA");
 //      autocomplete
 //  inputB
+var inputB = document.getElementById("pointB");
 //      autocomplete
 //  generate button
+var generateBtn = document.querySelector("button");
+
 
 //  .map  == render map here
 
@@ -15,9 +20,22 @@
 
 // STATE
 
+
 // FUNCTIONS
 
-//  Collect pointA and pointB and store                     1 *   
+//  Collect pointA and pointB and store                     1 * 
+//      include auto-complete function to get the place
+//      get the lon and lat from the place selected
+// function initGoogle() {
+//    fetch("https://maps.googleapis.com/maps/api/staticmap?center=0,0&zoom=1&size=1000x1000&key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ")
+//     .then(function (response){
+//         return response.json();
+//     })
+//     .then(function(data) {
+//         console.log(data);
+//     })
+// }
+
 
 //  Use Google Maps to find a midway point                  1 
 //      Maps SDKs
@@ -73,9 +91,14 @@
 //  input a
 //  input b
 //  press submit
-//  individual cards have information: type, name, 
 
-// INITIALIZATION
+// generateBtn.addEventListener("click", function() {
+//     generatePoint();
+// })
+// //  individual cards have information: type, name, 
 
-//      render world map
+// // INITIALIZATION
+
+// //      render world map
+// initGoogle();
 
