@@ -1,5 +1,8 @@
 
-// DEPENDENCIES             
+
+
+// DEPENDENCIES
+var apiKeyTheo = "AIzaSyCfMIOuEOERlmSzDzHkHs23VNYCBeUTQ70";
 //  inputA
 var inputA = document.getElementById("pointA");
 //      autocomplete
@@ -13,15 +16,17 @@ var generateBtn = document.querySelector("button");
 //  .map  == render map here
 
 //  #results-container(append results cards to this)
-//  
+//
 
 //  #sortBy == grab the value of one of the options
-
 
 // STATE
 
 
 // FUNCTIONS
+
+
+//  Collect pointA and pointB and store                     1 *
 
 //  Collect pointA and pointB and store                     1 * 
 //      include auto-complete function to get the place
@@ -37,7 +42,7 @@ var generateBtn = document.querySelector("button");
 // }
 
 
-//  Use Google Maps to find a midway point                  1 
+//  Use Google Maps to find a midway point                  1
 //      Maps SDKs
 //          render map == staticcally
 //          get coordinates for a
@@ -45,7 +50,7 @@ var generateBtn = document.querySelector("button");
 //              average out the x's and y's of two coordinates
 //          return betweenCoordinate                        1
 
-//  Use Google Places                                       2 
+//  Use Google Places                                       2
 //      Geocoding
 //          Create a circle around the betweenCoordinate and get the places
 
@@ -80,7 +85,7 @@ var generateBtn = document.querySelector("button");
 //     }
 //   });
 // }
-// ===========================================================    
+// ===========================================================
 
 //  Function to Generate cards for places and place them                    2 *
 
@@ -92,6 +97,9 @@ var generateBtn = document.querySelector("button");
 //  input b
 //  press submit
 
+//  individual cards have information: type, name,
+
+
 // generateBtn.addEventListener("click", function() {
 //     generatePoint();
 // })
@@ -99,6 +107,8 @@ var generateBtn = document.querySelector("button");
 
 // // INITIALIZATION
 
-// //      render world map
+
+//      render world map
+
 // initGoogle();
 
