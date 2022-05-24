@@ -1,8 +1,11 @@
+// DEPENDENCIES             
+
 
 
 
 // DEPENDENCIES
 var apiKeyTheo = "AIzaSyCfMIOuEOERlmSzDzHkHs23VNYCBeUTQ70";
+
 //  inputA
 var inputA = document.getElementById("pointA");
 //      autocomplete

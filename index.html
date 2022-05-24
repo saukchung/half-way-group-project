@@ -7,24 +7,28 @@
     <title>Half Way</title>
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+      </style>
   </head>
   <body>
     <header>
-      <h1>1/2 Way</h1>
+      <h1 id="site-header">1/2 Way</h1>
     </header>
 
-    <form>
+    <form class="form">
       <div>
         <input id="pointA" type="text" placeholder="My location" />
       </div>
       <div>
         <input id="pointB" type="text" placeholder="Your location" />
       </div>
-      <button>Generate</button>
+      <button id="generate">Generate</button>
     </form>
 
     <div id="map">
       <!-- GOOGLE MAP HAS TO COME UP HERE -->
+
     </div>
 
     <main id="results-container">

@@ -1,6 +1,189 @@
+
+:root{
+    --clr-neon: rgb #53FFBC;
+    --clr-bg: hsl(323 21% 16%);
+}
+
+*{
+    
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Permanent Marker';
+}
+
+.header {
+    font-family: 'Permanent Marker';
+    display:flex;
+    border: dashed white;
+    border-top: 5px;
+    border-bottom: 5px;
+    border-left: none;
+    border-right: none;
+}
+
+#site-header {
+    display: flex;
+    color: var(--clr-neon);
+    font-size: 45px;
+    text-decoration: none;
+    padding: 20px;
+    border-top: 5px;
+    border-bottom: 5px;
+    border-right: none;
+    border-left: none;
+    border:solid;
+    border-color: white;
+    text-shadow: 0 0 10px rgb(212, 116, 202), 0 0 5px;
+}
+
+body {
+    margin: 0;
+    background: rgb(0, 0, 0);
+    min-height: 100vh;
+    max-width: 100vw;
+}
+
+.img {
+    background: transparent;
+}
+
+/* i:hover {
+    cursor: pointer;
+    color: #a1edd5;
+}
+
+.transitions {
+    transition: all 0.2s;
+} */
+
+/* CARD CSS */
+.form {
+    display: flex;
+    border: solid white;
+    padding: 5px , 5px, 5px, 5px;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    align-content: stretch;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-size-adjust: 20px;
+}
+
+#pointA
+#pointB
+#generate {
+    text-size-adjust: 20px;
+}
+
+#results-container {
+   text-align:center;
+    background: #4edbc8;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+}
+
+#results-container-content {
+    padding: 15px 30px 15px 30px;
+}
+
+.fixed {
+    position: fixed;
+        top: 5px;
+        left: 5px;
+
+    z-index: 1000;
+}
+
+.form-control {
+    font-size: 1rem;
+    border-radius: 0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #a8a8a8;
+    transition: all 0.2s;
+    width: 80%;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-bottom: 2px solid #a1edd5;
+    width: 100%;
+}
+
+.btn.form-control {
+    width: 100%;
+    border: 1px solid #77997e;
+}
+
+.btn-custom {
+    color: black;
+    margin-top: 25px;
+    background: #d9f4c7;
+}
+
+.data {
+    background: #f9f9f9;
+    border: 1px solid #a8a8a8;
+    padding: 5px;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+    width: 100%;
+    height: 250px;
+}
+
+
+/* DATE CSS */
+/* .month {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.map {
+    height: 500px;
+}
+
+td {
+    padding: 5px;
+    transition: all 0.2s;
+}
+
+td:hover {
+    color: #a1edd5;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.gray-date {
+    color: #a8a8a8;
+}
+
+.unavailable {
+    color: white;
+}
+
+.unavailable:hover {
+    color: white;
+    cursor: default;
+}
+
+.full-size{
+    width: 100%;
+    height: 100%;
+}
+
+.footer {
+    color: aqua;
+} */
+
 #map {
     height: 400px;
     /* The height is 400 pixels */
     width: 100%;
     /* The width is the width of the web page */
   }
+
