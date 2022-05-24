@@ -25,6 +25,22 @@ var generateBtn = document.querySelector("button");
 
 // FUNCTIONS
 
+// Initialize and add the map
+function initMap() {
+    // The location of Uluru
+    console.log("mapit");
+    const nyctribeca = { lat: 40.7163, lng: -74.0086 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 13,
+      center: nyctribeca,
+    });
+    // The marker, positioned at Uluru
+    const marker = new google.maps.Marker({
+      position: nyctribeca,
+      map: map,
+    });
+  }
+
 
 //  Collect pointA and pointB and store                     1 *
 
@@ -111,4 +127,4 @@ var generateBtn = document.querySelector("button");
 //      render world map
 
 // initGoogle();
-
+  window.initMap = initMap;
