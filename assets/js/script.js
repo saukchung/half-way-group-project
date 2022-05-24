@@ -1,3 +1,29 @@
+$scope.mapInit = function() {
+    //creates a map centered at Minneapolis
+    $scope.map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: {lat: 44.9778, lng: -93.2650}
+    });
+
+    $scope.map.addListener('bounds_changed', function() {
+
+        var mapElement = $('#map div');
+        if(mapElement.height() >= window.innerHeight && mapElement.width() >= window.innerWidth && !$scope.isFullScreen) {
+
+            //  if the map element is fullscreen but isFullscreen has not been flagged, make the fullscreen css changes
+            $scope.isFullscreen = true;
+            $('#input-card').addClass('fixed');
+
+        }
+
+    });
+
+    $scope.geocoder = new google.maps.Geocoder;
+};
+
+
+
+
 // DEPENDENCIES             
 //  inputA
 //      autocomplete
