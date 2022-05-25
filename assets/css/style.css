@@ -8,7 +8,7 @@
     
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Permanent Marker';
+    font-family: 'Permanent Marker','Space Mono', monospace;
 }
 
 .header {
@@ -37,6 +37,7 @@
 }
 
 body {
+    font-family: 'space mono' monospace;
     margin: 0;
     background: rgb(0, 0, 0);
     min-height: 100vh;
@@ -58,6 +59,7 @@ body {
 
 /* CARD CSS */
 .form {
+    font-family: monospace;
     display: flex;
     border: solid white;
     padding: 5px , 5px, 5px, 5px;
