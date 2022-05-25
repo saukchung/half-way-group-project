@@ -22,14 +22,32 @@ $scope.mapInit = function() {
 };
 
 
+// DEPENDENCIES
+var apiKeyTheo = "AIzaSyCfMIOuEOERlmSzDzHkHs23VNYCBeUTQ70";
+var apiKeyBrian = "AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ";
 
 
 // DEPENDENCIES             
 //  inputA
+var inputA = document.getElementById("pointa");
 //      autocomplete
 //  inputB
+var inputB = document.getElementById("pointb");
 //      autocomplete
 //  generate button
+
+
+
+// function initAutocomplete() {
+//   var address = document.getElementById('address');
+//   var autocomplete = new google.maps.places.Autocomplete(address);
+// }
+
+// function mounted() {
+//   new google.maps.places.Autocomplete(
+//     document.getElementById("pointa")
+//   )
+// };
 
 //  .map  == render map here
 
@@ -42,10 +60,62 @@ $scope.mapInit = function() {
 // STATE
 
 // FUNCTIONS
+// Initialize and add the map
+function initMap() {
+    // The location of Uluru
+    console.log("mapit");
+    const nyctribeca = { lat: 40.7163, lng: -74.0086 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 13,
+      center: nyctribeca,
+    });
+    
+    // The marker, positioned at Uluru
+    const markera = new google.maps.Marker({
+      position: { lat: 40.7063, lng: -74.0066 },
+      map: map,
+    });
+    const markerb = new google.maps.Marker({
+      position: { lat: 40.7263, lng: -74.0096 },
+      map: map,
+    });
+   
+    // color this one gold?
+    const markerm = new google.maps.Marker({
+      position: { lat: 40.7163, lng: -74.0081 },
+      map: map,
+    });
+    
+    var pointa = document.getElementById("pointa");
+    var autocomplete = new google.maps.places.Autocomplete(pointa);
+    autocomplete.addListener('place_changed', function() {
+      var place = autocomplete.getPlace();
+    });
+  }
+ 
+  
+// function autocomplete() {
+//   const autocomplete = new google.maps.places.Autocomplete(inputA, 
+//     {
+//     bounds: defaultBounds,
+//     componentRestrictions: { country: "us" },
+//     fields: ["address_components", "name"],
+//     strictBounds: false,
+//     types: ["establishment"]
+//   })
+// }
+
 
 //  Collect pointA and pointB and store                     1 *   
 
-//  Use Google Maps to find a midway point                  1 
+//  Collect pointA and pointB and store                     1 *
+
+//  Collect pointA and pointB and store                     1 * 
+//      include auto-complete function to get the place
+//      get the lon and lat from the place selected
+
+
+//  Use Google Maps to find a midway point                  1
 //      Maps SDKs
 //          render map == staticcally
 //          get coordinates for a
@@ -104,6 +174,9 @@ $scope.mapInit = function() {
 // INITIALIZATION
 
 //      render world map
+
+// initGoogle();
+  window.initMap = initMap;
 
 [
     {
