@@ -11,6 +11,10 @@
     font-family: 'Space Mono', monospace;
 }
 
+span {
+  content: "\2192";
+}
+
 .header {
     font-family: 'Permanent Marker';
     display:flex;
