@@ -1,14 +1,14 @@
 
 :root{
-    --clr-neon: rgb #53FFBC;
-    --clr-bg: hsl(323 21% 16%);
+    --clr-neon: rgb #3edc68;
+    --clr-bg: rgb(79, 202, 89);
 }
 
 *{
     
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Permanent Marker';
+    font-family: 'Space Mono', monospace;
 }
 
 .header {
@@ -23,6 +23,7 @@
 
 #site-header {
     display: flex;
+    justify-content: center;
     color: var(--clr-neon);
     font-size: 45px;
     text-decoration: none;
@@ -33,10 +34,32 @@
     border-left: none;
     border:solid;
     border-color: white;
-    text-shadow: 0 0 10px rgb(212, 116, 202), 0 0 5px;
+    text-shadow: 0 0 10px rgb(143, 236, 148), 0 0 5px;
+}
+
+#site-header::before {
+    content: "";
+    position: absolute;
+    background: var(--clr-neon);
+    top: 120%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform: perspective(1em) rotateX(40deg) scale(1,0,35);
+    filter:blur(1em);
+    opacity:0.7;
+
+}
+
+#site-header:hover {
+    background: var(--clr-bg);
+    color: #3edc68;
+    text-shadow: none;
 }
 
 body {
+    font-family: 'space mono' monospace;
     margin: 0;
     background: rgb(0, 0, 0);
     min-height: 100vh;
@@ -58,9 +81,10 @@ body {
 
 /* CARD CSS */
 .form {
+    font-family: monospace;
     display: flex;
     border: solid white;
-    padding: 5px , 5px, 5px, 5px;
+    padding: 50px , 50px, 50px, 50px;
     background: black;
     display: flex;
     justify-content: center;
@@ -71,23 +95,28 @@ body {
     text-size-adjust: 20px;
 }
 
-#pointA
-#pointB
-#generate {
-    text-size-adjust: 20px;
-}
 
 #results-container {
-   text-align:center;
-    background: #4edbc8;
+    border: solid rgb(90, 162, 35);
+    color: var(--clr-neon);
+    text-shadow: 0 0 10px rgb(143, 236, 148), 0 0 5px;
+    text-align:center;
+    background: none;
     padding-left: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin: 0;
+    box-shadow: 0 0 10px rgb(143, 236, 148), 0 0 5px;
+
 }
 
 #results-container-content {
     padding: 15px 30px 15px 30px;
+}
+
+.map {
+    height: 400px;
+    width: 100%;
 }
 
 .fixed {
@@ -184,6 +213,6 @@ td:hover {
     height: 400px;
     /* The height is 400 pixels */
     width: 100%;
-    /* The width is the width of the web page */
+   
   }
 
