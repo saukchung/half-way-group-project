@@ -1,3 +1,7 @@
+
+
+// DEPENDENCIES             
+
 $scope.mapInit = function() {
     //creates a map centered at Minneapolis
     $scope.map = new google.maps.Map(document.getElementById('map'), {
@@ -10,6 +14,7 @@ $scope.mapInit = function() {
         var mapElement = $('#map div');
         if(mapElement.height() >= window.innerHeight && mapElement.width() >= window.innerWidth && !$scope.isFullScreen) {
 
+
             //  if the map element is fullscreen but isFullscreen has not been flagged, make the fullscreen css changes
             $scope.isFullscreen = true;
             $('#input-card').addClass('fixed');
@@ -20,6 +25,7 @@ $scope.mapInit = function() {
 
     $scope.geocoder = new google.maps.Geocoder;
 };
+
 
 
 // DEPENDENCIES
@@ -158,7 +164,22 @@ function initMap() {
 //     }
 //   });
 // }
+
+// ===========================================================
+var apiKeyTheo = "AIzaSyCfMIOuEOERlmSzDzHkHs23VNYCBeUTQ70";
+var dummyLoc = "40.78143,-73.97378";
+var setRadius = "1500";
+
+var requestUrl =
+  "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
+  dummyLoc +
+  "&radius=" +
+  setRadius +
+  "&type=restaurant&key=" +
+  apiKeyTheo;
+
 // ===========================================================    
+
 
 //  Function to Generate cards for places and place them                    2 *
 
