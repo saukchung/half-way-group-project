@@ -84,7 +84,7 @@ body {
     font-family: monospace;
     display: flex;
     border: solid white;
-    padding: 10px , 10px, 10px, 10px;
+    padding: 50px , 50px, 50px, 50px;
     background: black;
     display: flex;
     justify-content: center;
@@ -95,19 +95,19 @@ body {
     text-size-adjust: 20px;
 }
 
-#pointA
-#pointB
-#generate {
-    text-size-adjust: 20px;
-}
 
 #results-container {
-   text-align:center;
-    background: #4edbc8;
+    border: solid rgb(90, 162, 35);
+    color: var(--clr-neon);
+    text-shadow: 0 0 10px rgb(143, 236, 148), 0 0 5px;
+    text-align:center;
+    background: none;
     padding-left: 30px;
     padding-top: 30px;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
     margin: 0;
+    box-shadow: 0 0 10px rgb(143, 236, 148), 0 0 5px;
+
 }
 
 #results-container-content {
