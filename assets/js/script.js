@@ -1,12 +1,33 @@
-// DEPENDENCIES             
+$scope.mapInit = function() {
+    //creates a map centered at Minneapolis
+    $scope.map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: {lat: 44.9778, lng: -93.2650}
+    });
 
+    $scope.map.addListener('bounds_changed', function() {
 
+        var mapElement = $('#map div');
+        if(mapElement.height() >= window.innerHeight && mapElement.width() >= window.innerWidth && !$scope.isFullScreen) {
+
+            //  if the map element is fullscreen but isFullscreen has not been flagged, make the fullscreen css changes
+            $scope.isFullscreen = true;
+            $('#input-card').addClass('fixed');
+
+        }
+
+    });
+
+    $scope.geocoder = new google.maps.Geocoder;
+};
 
 
 // DEPENDENCIES
 var apiKeyTheo = "AIzaSyCfMIOuEOERlmSzDzHkHs23VNYCBeUTQ70";
 var apiKeyBrian = "AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ";
 
+
+// DEPENDENCIES             
 //  inputA
 var inputA = document.getElementById("pointa");
 //      autocomplete
@@ -14,8 +35,6 @@ var inputA = document.getElementById("pointa");
 var inputB = document.getElementById("pointb");
 //      autocomplete
 //  generate button
-var generateBtn = document.querySelector("button");
-
 
 
 
@@ -33,12 +52,12 @@ var generateBtn = document.querySelector("button");
 //  .map  == render map here
 
 //  #results-container(append results cards to this)
-//
+//  
 
 //  #sortBy == grab the value of one of the options
 
-// STATE
 
+// STATE
 
 // FUNCTIONS
 // Initialize and add the map
@@ -87,6 +106,7 @@ function initMap() {
 // }
 
 
+//  Collect pointA and pointB and store                     1 *   
 
 //  Collect pointA and pointB and store                     1 *
 
@@ -103,7 +123,7 @@ function initMap() {
 //              average out the x's and y's of two coordinates
 //          return betweenCoordinate                        1
 
-//  Use Google Places                                       2
+//  Use Google Places                                       2 
 //      Geocoding
 //          Create a circle around the betweenCoordinate and get the places
 
@@ -138,7 +158,7 @@ function initMap() {
 //     }
 //   });
 // }
-// ===========================================================
+// ===========================================================    
 
 //  Function to Generate cards for places and place them                    2 *
 
@@ -149,20 +169,113 @@ function initMap() {
 //  input a
 //  input b
 //  press submit
+//  individual cards have information: type, name, 
 
-//  individual cards have information: type, name,
-
-
-// generateBtn.addEventListener("click", function() {
-//     generatePoint();
-// })
-// //  individual cards have information: type, name, 
-
-// // INITIALIZATION
-
+// INITIALIZATION
 
 //      render world map
 
 // initGoogle();
   window.initMap = initMap;
 
+[
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#444444"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.country",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.country",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "weight": "0.01"
+            },
+            {
+                "saturation": "100"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f2f2f2"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 45
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#99d4d4"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    }
+]

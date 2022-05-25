@@ -8,12 +8,12 @@
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Mono&display=swap");
     </style>
   </head>
   <body>
     <header>
-      <h1 id="site-header">1/2 Way</h1>
+      <h1 id="site-header">1/2 Way -></h1>
     </header>
 
     <form class="form">
@@ -38,6 +38,12 @@
 
     <div id="map">
       <!-- GOOGLE MAP HAS TO COME UP HERE -->
+      <iframe
+        src="https://snazzymaps.com/embed/396576"
+        width="100%"
+        height="90%"
+        style="border: none"
+      ></iframe>
     </div>
 
     <main id="results-container">
@@ -68,9 +74,33 @@
 
   <script src="./assets/js/locale.js"></script>
 
+  <script>
+    // Initialize and add the map
+    function initMap() {
+      // The location of Uluru
+      console.log("mapit");
+      const nyctribeca = { lat: 40.7163, lng: -74.0086 };
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 13,
+        center: nyctribeca,
+      });
+      // The marker, positioned at Uluru
+      const marker = new google.maps.Marker({
+        position: nyctribeca,
+        map: map,
+      });
+    }
+    window.initMap = initMap;
+  </script>
+  <!-- src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ&callback=initMap&v=weekly"
+    defer -->
   <script
-    src="https://maps.googleapis.com/maps/api/js?library=places,&key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ&callback=initMap"
-    async
+    id="map"
+    src="https://snazzymaps.com/embed/396576"
+    width="100%"
+    height="90%"
+    style="border: none"
+    title="map"
     defer
   ></script>
 </html>
