@@ -7,20 +7,33 @@
     <title>Half Way</title>
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+    </style>
   </head>
   <body>
     <header>
-      <h1>1/2 Way</h1>
+      <h1 id="site-header">1/2 Way</h1>
     </header>
 
-    <form>
+    <form class="form">
       <div>
-        <input id="pointA" type="text" placeholder="My location" />
+        <input
+          id="pointa"
+          class="controls"
+          type="text"
+          placeholder="My Location"
+        />
       </div>
       <div>
-        <input id="pointB" type="text" placeholder="Your location" />
+        <input
+          id="pointb"
+          class="controls"
+          type="text"
+          placeholder="Your Location"
+        />
       </div>
-      <button>Generate</button>
+      <button id="generate">Generate</button>
     </form>
 
     <div id="map">
@@ -48,7 +61,7 @@
     <footer>
       <p>made by the MVPs</p>
     </footer>
-    <!-- AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ -->
+    <!-- Brian'sKey AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ -->
   </body>
   <!-- Linked the Javascript here -->
   <script src="./assets/js/script.js"></script>
@@ -56,7 +69,13 @@
   <script src="./assets/js/locale.js"></script>
 
   <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ&callback=initMap&v=weekly"
+    src="https://maps.googleapis.com/maps/api/js?library=places&key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ&callback=initMap"
+    async
+    defer
+  ></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?library=places&key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ&callback=initAutocomplete"
+    async
     defer
   ></script>
 </html>

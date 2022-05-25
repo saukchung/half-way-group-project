@@ -1,17 +1,37 @@
+// DEPENDENCIES             
+
 
 
 
 // DEPENDENCIES
 var apiKeyTheo = "AIzaSyCfMIOuEOERlmSzDzHkHs23VNYCBeUTQ70";
+var apiKeyBrian = "AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ";
+
 //  inputA
-var inputA = document.getElementById("pointA");
+var inputA = document.getElementById("pointa");
 //      autocomplete
 //  inputB
-var inputB = document.getElementById("pointB");
+var inputB = document.getElementById("pointb");
 //      autocomplete
 //  generate button
 var generateBtn = document.querySelector("button");
 
+function initAutocomplete() {
+  var pointa = document.getElementById("pointa");
+  var autocomplete = new google.maps.places.Autocomplete(pointa);
+}
+
+
+// function initAutocomplete() {
+//   var address = document.getElementById('address');
+//   var autocomplete = new google.maps.places.Autocomplete(address);
+// }
+
+// function mounted() {
+//   new google.maps.places.Autocomplete(
+//     document.getElementById("pointa")
+//   )
+// };
 
 //  .map  == render map here
 
@@ -34,12 +54,37 @@ function initMap() {
       zoom: 13,
       center: nyctribeca,
     });
+    
     // The marker, positioned at Uluru
-    const marker = new google.maps.Marker({
-      position: nyctribeca,
+    const markera = new google.maps.Marker({
+      position: { lat: 40.7063, lng: -74.0066 },
       map: map,
     });
+    const markerb = new google.maps.Marker({
+      position: { lat: 40.7263, lng: -74.0096 },
+      map: map,
+    });
+   
+    // color this one gold?
+    const markerm = new google.maps.Marker({
+      position: { lat: 40.7163, lng: -74.0081 },
+      map: map,
+    });
+    
   }
+ 
+  
+// function autocomplete() {
+//   const autocomplete = new google.maps.places.Autocomplete(inputA, 
+//     {
+//     bounds: defaultBounds,
+//     componentRestrictions: { country: "us" },
+//     fields: ["address_components", "name"],
+//     strictBounds: false,
+//     types: ["establishment"]
+//   })
+// }
+
 
 
 //  Collect pointA and pointB and store                     1 *
@@ -47,15 +92,6 @@ function initMap() {
 //  Collect pointA and pointB and store                     1 * 
 //      include auto-complete function to get the place
 //      get the lon and lat from the place selected
-// function initGoogle() {
-//    fetch("https://maps.googleapis.com/maps/api/staticmap?center=0,0&zoom=1&size=1000x1000&key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ")
-//     .then(function (response){
-//         return response.json();
-//     })
-//     .then(function(data) {
-//         console.log(data);
-//     })
-// }
 
 
 //  Use Google Maps to find a midway point                  1
@@ -128,3 +164,7 @@ function initMap() {
 
 // initGoogle();
   window.initMap = initMap;
+  initAutocomplete();
+autocomplete.addListener('place_changed', function() {
+  var place = autocomplete.getPlace();
+});
