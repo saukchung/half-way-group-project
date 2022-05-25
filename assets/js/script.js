@@ -16,10 +16,7 @@ var inputB = document.getElementById("pointb");
 //  generate button
 var generateBtn = document.querySelector("button");
 
-function initAutocomplete() {
-  var pointa = document.getElementById("pointa");
-  var autocomplete = new google.maps.places.Autocomplete(pointa);
-}
+
 
 
 // function initAutocomplete() {
@@ -44,7 +41,6 @@ function initAutocomplete() {
 
 
 // FUNCTIONS
-
 // Initialize and add the map
 function initMap() {
     // The location of Uluru
@@ -71,6 +67,11 @@ function initMap() {
       map: map,
     });
     
+    var pointa = document.getElementById("pointa");
+    var autocomplete = new google.maps.places.Autocomplete(pointa);
+    autocomplete.addListener('place_changed', function() {
+      var place = autocomplete.getPlace();
+    });
   }
  
   
@@ -164,7 +165,4 @@ function initMap() {
 
 // initGoogle();
   window.initMap = initMap;
-  initAutocomplete();
-autocomplete.addListener('place_changed', function() {
-  var place = autocomplete.getPlace();
-});
+
