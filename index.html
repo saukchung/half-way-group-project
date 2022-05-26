@@ -72,20 +72,11 @@
   </body>
 
   <script>
-    // Initialize and add the map
-    function initMap() {
-      // The location of Uluru
-      console.log("mapit");
-      const nyctribeca = { lat: 40.7163, lng: -80.0086 };
-      const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 13,
-        center: nyctribeca,
-      });
-      // The marker, positioned at Uluru
-      const marker = new google.maps.Marker({
-        position: nyctribeca,
-        map: map,
-      });
+    var map;
+    var service;
+    var infowindow;
+
+    function initialize() {
       var pointa = document.getElementById("pointa");
       var pointb = document.getElementById("pointb");
       var generateBtn = document.getElementById("generate");
@@ -93,22 +84,18 @@
       var autocompleteB = new google.maps.places.Autocomplete(pointb);
       autocompleteA.addListener("place_changed", function () {
         var place = autocompleteA.getPlace();
+        if (place.length == 0) {
+          addressA = place;
+          return;
+        }
       });
       autocompleteB.addListener("place_changed", function () {
         var place = autocompleteB.getPlace();
+        if (place.length == 0) {
+          return;
+        }
       });
-      generateBtn.addEventListener("click", function () {
-        console.log(pointa.value());
-      });
-    }
-  </script>
 
-  <script>
-    var map;
-    var service;
-    var infowindow;
-
-    function initialize() {
       var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
 
       console.log(pyrmont);
@@ -130,7 +117,7 @@
     window.initMap = initMap;
   </script>
   <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ&libraries=places&callback=initMap&v=weekly"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ&libraries=places&callback=initialize&v=weekly"
     defer
   ></script>
   <!-- <script
