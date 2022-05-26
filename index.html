@@ -54,7 +54,7 @@
           </select>
         </div>
       </div>
-
+      <ul id="cards"></ul>
       <!-- cards go here -->
     </main>
 
@@ -69,6 +69,7 @@
     var map;
     var service;
     var infowindow;
+    var resList = document.getElementById("cards");
 
     function initialize() {
       var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
@@ -91,8 +92,10 @@
 
     function callback(results, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
+        var resultArray = results;
+        console.log(resultArray);
         for (var i = 0; i < results.length; i++) {
-          console.log(results[i]);
+        document.getElementById("cards").innerHTML=JSON.stringify(resultArray[i].name);
         }
       }
     }

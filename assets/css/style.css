@@ -1,73 +1,70 @@
-
-:root{
-    --clr-neon: rgb #3edc68;
-    --clr-bg: rgb(79, 202, 89);
+:root {
+  --clr-neon: rgb #3edc68;
+  /* --clr-bg: rgb(79, 202, 89); */
 }
 
-*{
-    
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Space Mono', monospace;
+* {
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
 }
 
 .header {
-    font-family: 'Permanent Marker';
-    display:flex;
-    border: dashed white;
-    border-top: 5px;
-    border-bottom: 5px;
-    border-left: none;
-    border-right: none;
+  font-family: "Permanent Marker";
+  display: flex;
+  border: dashed white;
+  border-top: 5px;
+  border-bottom: 5px;
+  border-left: none;
+  border-right: none;
 }
 
 #site-header {
-    display: flex;
-    justify-content: center;
-    color: var(--clr-neon);
-    font-size: 45px;
-    text-decoration: none;
-    padding: 20px;
-    border-top: 5px;
-    border-bottom: 5px;
-    border-right: none;
-    border-left: none;
-    border:solid;
-    border-color: white;
-    text-shadow: 0 0 10px rgb(143, 236, 148), 0 0 5px;
+  display: flex;
+  justify-content: center;
+  color: var(--clr-neon);
+  font-size: 45px;
+  text-decoration: none;
+  padding: 20px;
+  border-top: 5px;
+  border-bottom: 5px;
+  border-right: none;
+  border-left: none;
+  border: solid;
+  border-color: white;
+  text-shadow: 0 0 10px rgb(143, 236, 148), 0 0 5px;
 }
 
 #site-header::before {
-    content: "";
-    position: absolute;
-    background: var(--clr-neon);
-    top: 120%;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  content: "";
+  position: absolute;
+  background: var(--clr-neon);
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
-    transform: perspective(1em) rotateX(40deg) scale(1,0,35);
-    filter:blur(1em);
-    opacity:0.7;
-
+  transform: perspective(1em) rotateX(40deg) scale(1, 0, 35);
+  filter: blur(1em);
+  opacity: 0.7;
 }
 
 #site-header:hover {
-    background: var(--clr-bg);
-    color: #3edc68;
-    text-shadow: none;
+  background: var(--clr-bg);
+  color: #3edc68;
+  text-shadow: none;
 }
 
 body {
-    font-family: 'space mono' monospace;
-    margin: 0;
-    background: rgb(0, 0, 0);
-    min-height: 100vh;
-    max-width: 100vw;
+  font-family: "space mono" monospace;
+  margin: 0;
+  /* background: rgb(0, 0, 0); */
+  min-height: 100vh;
+  max-width: 100vw;
 }
 
 .img {
-    background: transparent;
+  background: transparent;
 }
 
 /* i:hover {
@@ -81,90 +78,87 @@ body {
 
 /* CARD CSS */
 .form {
-    font-family: monospace;
-    display: flex;
-    border: solid white;
-    padding: 50px , 50px, 50px, 50px;
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    align-content: stretch;
-    flex-wrap: wrap;
-    flex-direction: row;
-    text-size-adjust: 20px;
+  font-family: monospace;
+  display: flex;
+  border: solid white;
+  padding: 50px, 50px, 50px, 50px;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  align-content: stretch;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-size-adjust: 20px;
 }
 
-
 #results-container {
-    border: solid rgb(90, 162, 35);
-    color: var(--clr-neon);
-    text-shadow: 0 0 10px rgb(143, 236, 148), 0 0 5px;
-    text-align:center;
-    background: none;
-    padding-left: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin: 0;
-    box-shadow: 0 0 10px rgb(143, 236, 148), 0 0 5px;
-
+  border: solid rgb(90, 162, 35);
+  color: var(--clr-neon);
+  text-shadow: 0 0 10px rgb(143, 236, 148), 0 0 5px;
+  text-align: center;
+  background: none;
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 0;
+  box-shadow: 0 0 10px rgb(143, 236, 148), 0 0 5px;
 }
 
 #results-container-content {
-    padding: 15px 30px 15px 30px;
+  padding: 15px 30px 15px 30px;
 }
 
 .map {
-    height: 400px;
-    width: 100%;
+  height: 400px;
+  width: 100%;
 }
 
 .fixed {
-    position: fixed;
-        top: 5px;
-        left: 5px;
+  position: fixed;
+  top: 5px;
+  left: 5px;
 
-    z-index: 1000;
+  z-index: 1000;
 }
 
 .form-control {
-    font-size: 1rem;
-    border-radius: 0px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 2px solid #a8a8a8;
-    transition: all 0.2s;
-    width: 80%;
+  font-size: 1rem;
+  border-radius: 0px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid #a8a8a8;
+  transition: all 0.2s;
+  width: 80%;
 }
 
 .form-control:focus {
-    box-shadow: none;
-    border-bottom: 2px solid #a1edd5;
-    width: 100%;
+  box-shadow: none;
+  border-bottom: 2px solid #a1edd5;
+  width: 100%;
 }
 
 .btn.form-control {
-    width: 100%;
-    border: 1px solid #77997e;
+  width: 100%;
+  border: 1px solid #77997e;
 }
 
 .btn-custom {
-    color: black;
-    margin-top: 25px;
-    background: #d9f4c7;
+  color: black;
+  margin-top: 25px;
+  background: #d9f4c7;
 }
 
 .data {
-    background: #f9f9f9;
-    border: 1px solid #a8a8a8;
-    padding: 5px;
-    margin-bottom: 10px;
-    overflow-y: scroll;
-    width: 100%;
-    height: 250px;
+  background: #f9f9f9;
+  border: 1px solid #a8a8a8;
+  padding: 5px;
+  margin-bottom: 10px;
+  overflow-y: scroll;
+  width: 100%;
+  height: 250px;
 }
-
 
 /* DATE CSS */
 /* .month {
@@ -210,9 +204,7 @@ td:hover {
 } */
 
 #map {
-    height: 400px;
-    /* The height is 400 pixels */
-    width: 100%;
-   
-  }
-
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+}
