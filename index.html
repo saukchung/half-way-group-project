@@ -75,37 +75,36 @@
     var map;
     var service;
     var infowindow;
+    var pointa = document.getElementById("pointa");
+    var pointb = document.getElementById("pointb");
+    var generateBtn = document.getElementById("generate");
 
     function initialize() {
-      var pointa = document.getElementById("pointa");
-      var pointb = document.getElementById("pointb");
-      var generateBtn = document.getElementById("generate");
       var autocompleteA = new google.maps.places.Autocomplete(pointa);
       var autocompleteB = new google.maps.places.Autocomplete(pointb);
       autocompleteA.addListener("place_changed", function () {
         var place = autocompleteA.getPlace();
-        if (place.length == 0) {
+        if (place.length === 0) {
           addressA = place;
           return;
         }
       });
       autocompleteB.addListener("place_changed", function () {
         var place = autocompleteB.getPlace();
-        if (place.length == 0) {
+        if (place.length === 0) {
           return;
         }
       });
 
-      var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
+      var initPosition = new google.maps.LatLng(39.8097343, -98.5556199);
 
-      console.log(pyrmont);
       map = new google.maps.Map(document.getElementById("map"), {
-        center: pyrmont,
-        zoom: 15,
+        center: initPosition,
+        zoom: 4,
       });
 
       var request = {
-        location: pyrmont,
+        location: initPosition,
         radius: "500",
         type: ["restaurant"],
       };
@@ -114,7 +113,7 @@
       service.nearbySearch(request, callback);
     }
 
-    window.initMap = initMap;
+    window.initialize = initialize;
   </script>
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ&libraries=places&callback=initialize&v=weekly"
@@ -132,11 +131,15 @@
 
   <script>
     function callback(results, status) {
-      if (status == google.maps.places.PlacesServiceStatus.OK) {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
           console.log(results[i]);
         }
       }
     }
+    generateBtn.addEventListener("click", function (event) {
+      event.preventDefault();
+      console.log("WORKS");
+    });
   </script>
 </html>
