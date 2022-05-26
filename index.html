@@ -82,19 +82,12 @@
     function initialize() {
       var autocompleteA = new google.maps.places.Autocomplete(pointa);
       var autocompleteB = new google.maps.places.Autocomplete(pointb);
-      autocompleteA.addListener("place_changed", function () {
-        var place = autocompleteA.getPlace();
-        if (place.length === 0) {
-          addressA = place;
-          return;
-        }
-      });
-      autocompleteB.addListener("place_changed", function () {
-        var place = autocompleteB.getPlace();
-        if (place.length === 0) {
-          return;
-        }
-      });
+      // autocompleteA.addListener("place_changed", function () {
+      //   var place = autocompleteA.getPlace();
+      // });
+      // autocompleteB.addListener("place_changed", function () {
+      //   var place = autocompleteB.getPlace();
+      // });
 
       var initPosition = new google.maps.LatLng(39.8097343, -98.5556199);
 
@@ -139,7 +132,7 @@
     }
     generateBtn.addEventListener("click", function (event) {
       event.preventDefault();
-      console.log("WORKS");
+      console.log(pointa.value);
     });
   </script>
 </html>
