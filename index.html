@@ -38,6 +38,13 @@
 
     <div id="map">
       <!-- GOOGLE MAP HAS TO COME UP HERE -->
+
+      <iframe
+        src="https://snazzymaps.com/embed/396576"
+        width="100%"
+        height="90%"
+        style="border: none"
+      ></iframe>
     </div>
 
     <main id="results-container">
@@ -63,7 +70,38 @@
     </footer>
     <script src="./assets/js/script.js"></script>
   </body>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfMIOuEOERlmSzDzHkHs23VNYCBeUTQ70&libraries=places&callback=initMap"></script>
+
+  <script>
+    // Initialize and add the map
+    function initMap() {
+      // The location of Uluru
+      console.log("mapit");
+      const nyctribeca = { lat: 40.7163, lng: -80.0086 };
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 13,
+        center: nyctribeca,
+      });
+      // The marker, positioned at Uluru
+      const marker = new google.maps.Marker({
+        position: nyctribeca,
+        map: map,
+      });
+      var pointa = document.getElementById("pointa");
+      var pointb = document.getElementById("pointb");
+      var generateBtn = document.getElementById("generate");
+      var autocompleteA = new google.maps.places.Autocomplete(pointa);
+      var autocompleteB = new google.maps.places.Autocomplete(pointb);
+      autocompleteA.addListener("place_changed", function () {
+        var place = autocompleteA.getPlace();
+      });
+      autocompleteB.addListener("place_changed", function () {
+        var place = autocompleteB.getPlace();
+      });
+      generateBtn.addEventListener("click", function () {
+        console.log(pointa.value());
+      });
+    }
+  </script>
 
   <script>
     var map;
@@ -89,6 +127,23 @@
       service.nearbySearch(request, callback);
     }
 
+    window.initMap = initMap;
+  </script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ&libraries=places&callback=initMap&v=weekly"
+    defer
+  ></script>
+  <!-- <script
+    id="map"
+    src="https://snazzymaps.com/embed/396576"
+    width="100%"
+    height="90%"
+    style="border: none"
+    title="map"
+    defer
+  ></script> -->
+
+  <script>
     function callback(results, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
         for (var i = 0; i < results.length; i++) {
@@ -96,12 +151,5 @@
         }
       }
     }
-
-    var pointa = document.getElementById("pointa");
-    var autocomplete = new google.maps.places.Autocomplete(pointa);
-    autocomplete.addListener("place_changed", function () {
-      var place = autocomplete.getPlace();
-    });
-    initialize();
   </script>
 </html>
