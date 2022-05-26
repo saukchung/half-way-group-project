@@ -8,43 +8,29 @@
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Mono&display=swap");
-    </style>
+      @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Mono&display=swap');
+      </style>
+    
   </head>
   <body>
-    <span>&#189;</span>
     <header>
-      <h1 id="site-header">1/2 Way -></h1>
+      <h1 id="site-header">1/2 Way -> </h1>
     </header>
 
     <form class="form">
       <div>
-        <input
-          id="pointa"
-          class="controls"
-          type="text"
-          placeholder="My Location"
-        />
+        <input id="pointA" type="text" placeholder="My location" />
       </div>
       <div>
-        <input
-          id="pointb"
-          class="controls"
-          type="text"
-          placeholder="Your Location"
-        />
+        <input id="pointB" type="text" placeholder="Your location" />
       </div>
       <button id="generate">Generate</button>
     </form>
 
     <div id="map">
       <!-- GOOGLE MAP HAS TO COME UP HERE -->
-      <iframe
-        src="https://snazzymaps.com/embed/396576"
-        width="100%"
-        height="90%"
-        style="border: none"
-      ></iframe>
+      <iframe src="https://snazzymaps.com/embed/396576" width="100%" height="90%" style="border:none;"></iframe>
+
     </div>
 
     <main id="results-container">
@@ -68,7 +54,7 @@
     <footer>
       <p>made by the MVPs</p>
     </footer>
-    <!-- Brian'sKey AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ -->
+    <!-- AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ -->
   </body>
   <!-- Linked the Javascript here -->
   <script src="./assets/js/script.js"></script>
@@ -93,15 +79,11 @@
     }
     window.initMap = initMap;
   </script>
-  <!-- src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ&callback=initMap&v=weekly"
+    <!-- src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ&callback=initMap&v=weekly"
     defer -->
   <script
-    id="map"
-    src="https://snazzymaps.com/embed/396576"
-    width="100%"
-    height="90%"
-    style="border: none"
-    title="map"
+  id="map"
+    src="https://snazzymaps.com/embed/396576"width="100%" height="90%" style="border:none;" title="map"
     defer
   ></script>
 </html>
