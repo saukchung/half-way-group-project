@@ -98,8 +98,12 @@ function initMap() {
       var place = autocomplete.getPlace();
     });
   }
- 
+  function initialize() {
+    var input = document.getElementById('pointa');
+    new google.maps.places.Autocomplete(input);
+  }
   
+  google.maps.event.addDomListener(window, 'load', initialize);
 // function autocomplete() {
 //   const autocomplete = new google.maps.places.Autocomplete(inputA, 
 //     {
