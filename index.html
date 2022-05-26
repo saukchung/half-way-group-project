@@ -38,6 +38,7 @@
 
     <div id="map">
       <!-- GOOGLE MAP HAS TO COME UP HERE -->
+
       <iframe
         src="https://snazzymaps.com/embed/396576"
         width="100%"
@@ -54,7 +55,7 @@
           <h5>Sort by:</h5>
           <select name="sortBy" id="sortBy">
             <option value="">Ratings</option>
-            <option value="">Costs</option>
+            <option value="">Bosses</option>
             <option value="">Most equidistant</option>
             <option value="">##</option>
           </select>
@@ -67,19 +68,15 @@
     <footer>
       <p>made by the MVPs</p>
     </footer>
-    <!-- Brian'sKey AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ -->
+    <script src="./assets/js/script.js"></script>
   </body>
-  <!-- Linked the Javascript here -->
-  <script src="./assets/js/script.js"></script>
-
-  <script src="./assets/js/locale.js"></script>
 
   <script>
     // Initialize and add the map
     function initMap() {
       // The location of Uluru
       console.log("mapit");
-      const nyctribeca = { lat: 40.7163, lng: -74.0086 };
+      const nyctribeca = { lat: 40.7163, lng: -80.0086 };
       const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 13,
         center: nyctribeca,
@@ -89,12 +86,54 @@
         position: nyctribeca,
         map: map,
       });
+      var pointa = document.getElementById("pointa");
+      var pointb = document.getElementById("pointb");
+      var generateBtn = document.getElementById("generate");
+      var autocompleteA = new google.maps.places.Autocomplete(pointa);
+      var autocompleteB = new google.maps.places.Autocomplete(pointb);
+      autocompleteA.addListener("place_changed", function () {
+        var place = autocompleteA.getPlace();
+      });
+      autocompleteB.addListener("place_changed", function () {
+        var place = autocompleteB.getPlace();
+      });
+      generateBtn.addEventListener("click", function () {
+        console.log(pointa.value());
+      });
     }
+  </script>
+
+  <script>
+    var map;
+    var service;
+    var infowindow;
+
+    function initialize() {
+      var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
+
+      console.log(pyrmont);
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: pyrmont,
+        zoom: 15,
+      });
+
+      var request = {
+        location: pyrmont,
+        radius: "500",
+        type: ["restaurant"],
+      };
+
+      service = new google.maps.places.PlacesService(map);
+      service.nearbySearch(request, callback);
+    }
+
     window.initMap = initMap;
   </script>
-  <!-- src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ&callback=initMap&v=weekly"
-    defer -->
   <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ&libraries=places&callback=initMap&v=weekly"
+    defer
+  ></script>
+  <!-- <script
     id="map"
     src="https://snazzymaps.com/embed/396576"
     width="100%"
@@ -102,5 +141,15 @@
     style="border: none"
     title="map"
     defer
-  ></script>
+  ></script> -->
+
+  <script>
+    function callback(results, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+          console.log(results[i]);
+        }
+      }
+    }
+  </script>
 </html>
