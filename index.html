@@ -15,12 +15,14 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Space+Mono&display=swap");
     </style>
+    <!-- creating local storage element to load places in saved places -->
   </head>
   <body>
     <header>
       <h1 id="site-header" class="is-size-1 has-text-centered">1/2 Way -></h1>
     </header>
 
+<!-- my location input box -->
     <form class="form">
       <div>
         <input
@@ -28,7 +30,8 @@
           class="controls"
           type="text"
           placeholder="My Location"
-   />
+  />
+   <!-- your location input box -->
       </div>
       <div>
         <input
@@ -38,6 +41,7 @@
           placeholder="Your Location"
         />
       </div>
+      <!-- generate button -->
       <button id="generate">Generate</button>
     </form>
 
@@ -75,7 +79,7 @@
               <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
             </figure>
           </div>
-          <div class="media-content">
+          <div class="media-content" id="lsOutput">
             <p class="title is-4">Saved Place</p>
             <p class="subtitle is-6"> <address> saved place address </address> </p>
           </div>
@@ -210,6 +214,34 @@
       event.preventDefault();
       console.log(pointa.value);
     });
-    localStorage.setItem("pointa" , "")
   </script>
+<!-- creating local storage element to load places in saved places -->
+<script>
+    const pointaInput = document.getElementById(pointa);
+    const pointbInput = document.getElementById(pointb);
+    const generateBtnInput = document.getElementById(generateBtn);
+    const localStorageOutput = document.getElementById(lsOutput);
+    
+    generateBtn.onclick = function() {
+      const pointA= pointaInput.value;
+      const pointB= pointbInput.value;
+
+      console.log(pointA);
+      console.log(pointB);
+
+      if (pointA && pointB) {
+        localStorage.setItem (pointA , pointB);
+        location.reload;
+      }
+    };
+
+    for (let i = 0 ; i < localStorage.length; i++) {
+      const pointA= localStorage.pointA(i);
+      const pointB= localStorage.getItem(pointA);
+
+      localStorageOutput.innerHTML += `${pointA} , ${pointB} <br />`;
+    }
+
+</script>
+ 
 </html>
