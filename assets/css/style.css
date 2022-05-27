@@ -8,11 +8,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Space Mono', monospace;
+    margin: 0px;
+    color: white;
 }
 
 
 .header {
-    font-family: 'Permanent Marker';
     display:flex;
     border: dashed white;
     border-top: 5px;
@@ -58,6 +59,11 @@
     text-shadow: none;
 }
 
+#generate {
+    display: inline-flex;
+    padding: 5px 5px 5px 5px;
+}
+
 body {
     font-family: 'space mono' monospace;
     margin: 0;
@@ -65,19 +71,6 @@ body {
     min-height: 100vh;
     max-width: 100vw;
 }
-
-.img {
-    background: transparent;
-}
-
-/* i:hover {
-    cursor: pointer;
-    color: #a1edd5;
-}
-
-.transitions {
-    transition: all 0.2s;
-} */
 
 /* CARD CSS */
 .form {
@@ -174,49 +167,6 @@ body {
     display: flex;
 }
 
-
-/* DATE CSS */
-/* .month {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.map {
-    height: 500px;
-}
-
-td {
-    padding: 5px;
-    transition: all 0.2s;
-}
-
-td:hover {
-    color: #a1edd5;
-    cursor: pointer;
-    font-weight: 700;
-}
-
-.gray-date {
-    color: #a8a8a8;
-}
-
-.unavailable {
-    color: white;
-}
-
-.unavailable:hover {
-    color: white;
-    cursor: default;
-}
-
-.full-size{
-    width: 100%;
-    height: 100%;
-}
-
-.footer {
-    color: aqua;
-} */
 
 #map {
     height: 400px;
