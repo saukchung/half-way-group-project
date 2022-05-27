@@ -80,8 +80,8 @@
     var generateBtn = document.getElementById("generate");
 
     function initialize() {
-      var autocompleteA = new google.maps.places.Autocomplete(pointa);
-      var autocompleteB = new google.maps.places.Autocomplete(pointb);
+      loadAutoComplete(google);
+
       // autocompleteA.addListener("place_changed", function () {
       //   var place = autocompleteA.getPlace();
       // });
@@ -105,6 +105,14 @@
       service = new google.maps.places.PlacesService(map);
       service.nearbySearch(request, callback);
     }
+
+    function loadAutoComplete(google) {
+      console.log(google);
+      var autocompleteA = new google.maps.places.Autocomplete(pointa);
+      var autocompleteB = new google.maps.places.Autocomplete(pointb);
+    }
+
+    // function loadPlaces(google)
 
     window.initialize = initialize;
   </script>
