@@ -169,6 +169,7 @@
         var addressURLb = pointb.value.replaceAll(" ","+");
         var gcURLa = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ&address=" + addressURLa;
         var gcURLb = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBcWRkRyguOY-1Up9HLRlIlqR8ApfkqGGQ&address=" + addressURLb;
+        
         fetch(gcURLa)
         .then(function (response) {
           return response.json();
@@ -179,7 +180,24 @@
             position: locationA,
             map: map,
           });
+          return locationA;
         })
+
+        fetch(gcURLb)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          const locationB = data.results[0].geometry.location;
+          var markerB = new google.maps.Marker({
+            position: locationB,
+            map: map,
+          });
+          return locationB;
+        })
+
+        console.log(locationA);
+        console.log(locationB);
       });
   }
 
