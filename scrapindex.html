@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Half Way</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <!-- This is a clean html demonstrating that the code written does indeed work to display a list of array elements returned by Google Map API Places Library nearbySearch function.-->
+  <body>
+    <header>
+      <h1 id="site-header">1/2 Way -></h1>
+    </header>
+
+    <form class="form">
+      <div>
+        <input
+          id="pointa"
+          class="controls"
+          type="text"
+          placeholder="My Location"
+        />
+      </div>
+      <div>
+        <input
+          id="pointb"
+          class="controls"
+          type="text"
+          placeholder="Your Location"
+        />
+      </div>
+      <button id="generate">Generate</button>
+    </form>
+
+    <div id="map"></div>
+
+    <main id="results-container">
+      <!-- header for the list of results cards -->
+      <div>
+        <h3>Results</h3>
+        <div>
+          <h5>Sort by</h5>
+          <select name="sortBy" id="sortBy">
+            <option value="">Ratings</option>
+            <option value="">Reviews</option>
+            <option value="">Most equidistant</option>
+            <option value="">##</option>
+          </select>
+        </div>
+      </div>
+      <ul id="cards"></ul>
+
+      <!-- cards go here -->
+    </main>
+
+    <footer>
+      <p>made by the MVPs</p>
+    </footer>
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfMIOuEOERlmSzDzHkHs23VNYCBeUTQ70&libraries=places&callback=initMap"
+    ></script>
+  </body>
+  <script>
+    var map;
+    var service;
+    var infowindow;
+
+    function initialize() {
+      var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
+
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: pyrmont,
+        zoom: 15,
+      });
+
+      var request = {
+        location: pyrmont,
+        radius: "500",
+        type: ["restaurant"],
+      };
+
+      service = new google.maps.places.PlacesService(map);
+      service.nearbySearch(request, callback);
+    }
+
+    function callback(results, status) {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        console.log(results);
+        for (var i = 0; i < results.length; i++) {
+          document.getElementById("cards").innerHTML +=
+            "<li>" + JSON.stringify(results[i].name) + "<li>";
+        }
+      }
+    }
+    initialize();
+  </script>
+</html>
